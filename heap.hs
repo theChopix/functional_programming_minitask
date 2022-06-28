@@ -37,3 +37,4 @@ buildHeap :: (Eq a, Ord a) => [a] -> Tree a
 buildHeap [] = Leaf
 buildHeap [x] = Node x Leaf Leaf
 buildHeap (x:xs) = insert x (buildHeap xs)
+
