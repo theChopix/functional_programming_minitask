@@ -28,7 +28,6 @@ enforce (Node x (Node y left right) (Node z left' right'))
                                                     | otherwise = (Node x (Node y (enforce left) (enforce right)) (Node z (enforce left') (enforce right')))
 
 insert :: (Eq a, Ord a) => a -> Tree a -> Tree a
--- insert x (Node y left right) = Node y (insert x left) right
 insert x (Node y left right) 
                         | (minDepth left) > (minDepth right) = (enforce (Node y left (insert x right))) 
                         | otherwise = (enforce (Node y (insert x left) right))
